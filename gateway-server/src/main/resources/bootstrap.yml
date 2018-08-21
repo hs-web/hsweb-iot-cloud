@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    config:
+      label: develop
+      profile: dev
+      discovery:
+        enabled: false
+        service-id: config-server
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 200000
+          strategy: SEMAPHORE

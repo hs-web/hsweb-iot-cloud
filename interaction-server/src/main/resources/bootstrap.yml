@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    discovery:
+      client:
+        simple:
+          local:
+            service-id: interaction-server
+
+eureka:
+  client:
+    service-url:
+        defaultZone: http://${eureka-host:localhost}:${eureka-port:8761}/eureka/
+  instance:
+    lease-expiration-duration-in-seconds: 5
+    lease-renewal-interval-in-seconds: 5
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+          strategy: SEMAPHORE

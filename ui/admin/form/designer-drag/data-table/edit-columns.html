@@ -1,0 +1,29 @@
+<div id="column-config-datagrid" class="mini-treegrid" style="width:100%;height:100%;"
+     allowResize="false" pageSize="20" showPager="false"
+     allowCellEdit="true" allowCellSelect="true" multiSelect="true"
+     editNextOnEnterKey="true" editNextRowCell="true" allowLeafDropIn="false"
+     allowDrag="true" allowDrop="true" treeColumn="index" idField="field">
+    <div property="columns">
+        <div type="indexcolumn" name="index" headerAlign="center" align="center" width="15">
+            <span class="title-button icon-add" onclick="mini.get('column-config-datagrid').addNode({show:true})"></span>
+        </div>
+        <div field="field" width="40" headerAlign="center">字段
+            <input property="editor" emptyText="接口返回的字段名,如: type" allowInput="true" class="mini-textbox"/>
+        </div>
+        <div field="displayField" width="40" headerAlign="center">显示字段
+            <input property="editor" emptyText="单元格实际显示的字段,如: typeText" class="mini-textbox"/>
+        </div>
+        <div field="header" width="40" headerAlign="center">标题
+            <input property="editor" class="mini-textbox" emptyText="表头"/>
+        </div>
+        <div field="width" width="20" headerAlign="center">宽度
+            <input property="editor" class="mini-textbox"/>
+        </div>
+        <div name="condition" field="condition" align="center" width="20" headerAlign="center">显示条件
+        </div>
+        <div field="renderer" name="renderer" align="center" width="20" headerAlign="center">自定义渲染
+        </div>
+        <div name='action' width="20" align="center" headerAlign="center">操作
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+spring:
+  datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      #默认使用h2数据库
+      url : jdbc:h2:file:./data/${spring.application.name}
+      username : sa
+      password :
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          zk-nodes: localhost:2181
+          min-partition-count: 1
+          auto-create-topics: true
+          auto-add-partitions: true
+
+logging:
+  level:
+    org.hswebframework.web: DEBUG
+    org.hswebframework.web.cache: WARN
+    org.hswebframework.iot: DEBUG
+    org.apache.ibatis: DEBUG
+    org.mybatis: DEBUG

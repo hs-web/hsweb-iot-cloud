@@ -1,0 +1,387 @@
+
+.dynamic-form .form-item {
+    width: 99%;
+    min-height: 28px;
+}
+
+.dynamic-form .mini-col-12 .form-item {
+    width: 99.7%;
+}
+
+.dynamic-form .child-form {
+    border: 1px solid #ddd;
+}
+
+.dynamic-form .form-component {
+    margin-top: 8px;
+}
+
+.dynamic-form .form-component legend {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dynamic-form .form-hidden {
+    display: none;
+    color: grey;
+}
+
+.dynamic-form .hide-label .form-label {
+    display: none;
+}
+
+.dynamic-form .form-label {
+    float: left;
+    display: block;
+    width: 110px;
+    padding: 0 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    overflow: hidden;
+    text-align: right;
+    /*border: 1px solid #ddd;*/
+    /*background: #FBFBFB;*/
+    box-sizing: border-box;
+    /*border-right: 0px;*/
+}
+
+.dynamic-form .simple-form-label {
+    display: block;
+    padding: 0 6px;
+    font-weight: 400;
+    line-height: 30px;
+    height: 30px;
+}
+
+.dynamic-form .table .simple-form-label {
+    border: 0;
+    background: none;
+}
+
+.dynamic-form .input-block .mini-textbox-border {
+    /*border-left: 0px;*/
+    border-radius: 0;
+    height: 30px;
+}
+
+.dynamic-form .input-block .mini-textarea .mini-textbox-border {
+    /*border-left: 0px;*/
+    border-radius: 0;
+    height: 100%;
+}
+
+.dynamic-form .input-block .mini-buttonedit-border {
+    /*border-left: 0px;*/
+    border-radius: 0;
+    height: 30px;
+}
+
+.dynamic-form .form-text .input-block .mini-textbox-border {
+    /*border-left: 1px solid #ddd;;*/
+}
+
+.dynamic-form .form-text .input-block .mini-buttonedit-border {
+    /*border-left: 1px solid #ddd;;*/
+}
+
+/*多选框*/
+.dynamic-form .mini-list-inner {
+    margin-left: 5px;
+}
+
+.dynamic-form .mini-checkboxlist, .mini-radiobuttonlist {
+    line-height: 26px;
+}
+
+.dynamic-form .form-text .form-label {
+    /*float: none;*/
+    /*width: 110px;*/
+    /*border-radius: 2px;*/
+    /*box-sizing: border-box;*/
+    /*text-align: right;*/
+    /*border-bottom: 0;*/
+}
+
+.dynamic-form .input-block {
+    position: relative;
+    margin-left: 110px;
+}
+
+.dynamic-form .form-item {
+    margin-top: 5px;
+}
+
+.dynamic-form .form-text .input-block {
+    /*margin-left: 0px;*/
+    /*margin-top: 8px;*/
+}
+
+.dynamic-form .star {
+    color: red;
+}
+
+.dynamic-form .space {
+    margin-left: 0.5em;
+}
+
+.dynamic-form .component-body {
+    margin-top: 16px;
+}
+
+.dynamic-form .search-container .form-component {
+    margin-top: 5px;
+}
+
+.dynamic-form .search-container .buttons {
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.dynamic-form .table .form-component {
+    border: 0;
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+    border-right: 1px solid black;
+    /*display: table;*/
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 0;
+}
+
+.dynamic-form .table {
+    border: 1px solid black;
+    border-right: 0;
+    border-bottom: 0;
+    position: relative;
+    padding: 0 1px 1px 0;
+    margin: 0;
+    overflow: hidden;
+    width: 99.99999%;
+}
+
+/*.dynamic-form .table:after {*/
+/*content: '';*/
+/*display: block;*/
+/**/
+/*}*/
+
+.dynamic-form .table .form-label {
+    background: none;
+    border: 0;
+    border-right: 1px solid black;
+    height: 100%;
+}
+
+.dynamic-form .table .component-body {
+    border-left: 0;
+    margin-top: 0;
+}
+
+.dynamic-form .table .input-block {
+    margin-left: 109px;
+    border-left: 1px solid black;
+}
+
+.dynamic-form .table .form-text .component-body {
+    border-left: none;
+    margin-left: 0;
+}
+
+.dynamic-form .table .form-item {
+    margin-top: 0;
+    height: 100%;
+}
+
+.dynamic-form .table .mini-textbox-border,
+.dynamic-form .table .mini-textbox-input,
+.dynamic-form .table .mini-buttonedit-border,
+.dynamic-form .table .mini-buttonedit-input,
+.dynamic-form .table .mini-textboxlist-border {
+    border: 0;
+    background: none;
+    cursor: default;
+}
+
+.dynamic-form .table .mini-textbox-input {
+    border-bottom: 1px solid #dddddd;
+}
+
+.dynamic-form .table .mini-buttonedit-button,
+.dynamic-form .table .mini-textboxlist-close {
+    display: none;
+}
+
+.dynamic-form .table .mini-textboxlist-item {
+    padding-right: 8px;
+}
+
+.dynamic-form .table .form-text .form-label {
+    border: 0;
+}
+
+.dynamic-form .table .form-text .input-block .mini-textbox-border {
+    border: 0;
+}
+
+.dynamic-form .hide-comment .form-label {
+    display: none;
+}
+
+.dynamic-form .hide-comment .component-body {
+    margin-left: 0;
+}
+
+.dynamic-form .webuploader-container {
+    position: relative;
+}
+
+.dynamic-form .webuploader-element-invisible {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.dynamic-form .webuploader-pick {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background: #00b7ee;
+    padding: 5px 8px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 2px 0 0 8px;
+}
+
+.dynamic-form .webuploader-pick-hover {
+    background: #00a2d4;
+}
+
+.dynamic-form .webuploader-pick-disable {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.dynamic-form .file-info {
+    margin-left: 5px;
+    background-color: #FBFBFB;
+    height: 99%;
+    width: 98%;
+    float: left;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.dynamic-form .multiple .file-info {
+    height: 95px;
+    width: 90px;
+    float: left;
+}
+
+/*.dynamic-form .select-file {*/
+/*margin: auto;*/
+/*position: absolute;*/
+/*top:50%;*/
+/*width: 90%;*/
+/*height: 20px;*/
+/*text-align: center;*/
+/*}*/
+.dynamic-form .select-file {
+    margin: auto;
+    position: absolute;
+    bottom: 20px;
+    width: 90%;
+    height: 20px;
+    text-align: right;
+}
+
+.dynamic-form .file-info .file-name {
+    width: 100%;
+    height: 70px;
+    /*margin-top: 10px;*/
+    overflow: hidden;
+    word-wrap: break-word;
+    font-size: 14px;
+}
+
+.dynamic-form .file-upload-container {
+    width: 100%;
+    height: 200px;
+    border: 2px dashed #2196f3;
+    position: relative;
+    border-radius: 10px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.dynamic-form .file-queue {
+    height: 150px;
+    overflow: hidden;
+}
+
+.dynamic-form .multiple .file-queue {
+    height: 150px;
+    overflow-y: auto;
+}
+
+.dynamic-form .file-info .file-process {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.dynamic-form .file-info .file-upload-process {
+    width: 100%;
+    height: 1.2em;
+    background: #2196f3;
+    border-radius: 2px;
+}
+
+.dynamic-form .file-info .file-upload-percent {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+}
+
+.dynamic-form .file-info .error {
+    background: red;
+}
+
+.dynamic-form .file-operation {
+    display: none;
+}
+
+.dynamic-form .multiple .file-operation {
+    position: absolute;
+    /*height: 10p;*/
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#80000000', endColorstr='#80000000') \0;
+    /*background: rgba(0, 0, 0, 0.2);*/
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 9999;
+    text-align: right;
+    display: block;
+}
+
+.dynamic-form .file-upload-container .tips {
+    width: 100%;
+    height: 100%;
+    top: 40px;
+    position: absolute;
+    font-size: 26px;
+    color: grey;
+    text-align: center;
+}
+
+/*.dynamic-form .mini-required .mini-textbox-border, .mini-required .mini-buttonedit-border{*/
+/*background-color: white;*/
+/*}*/

@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      label: develop
+      profile: dev
+      discovery:
+        enabled: false
+        service-id: config-server
+    discovery:
+      client:
+        simple:
+          local:
+            service-id: user-server

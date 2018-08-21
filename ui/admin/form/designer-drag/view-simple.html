@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+    <title></title>
+    <script data-main="/admin/form/designer-drag/view-simple.js" src="/admin/boot.js" type="text/javascript"></script>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<div id='form' useIdForName='false' class="mini-clearfix dynamic-form">
+
+    <div class="mini-col-2 form-component" style="height: 200px">
+        <div class="form-item form-text brick">
+            <label class="form-label form-text">文件上传</label>
+            <div class="input-block component-body">
+                <div class="file-upload-container">
+                    <div class="file-queue mini-clearfix">
+                    </div>
+                    <div class="select-file">
+                        <a class="webuploader-container">
+                            <div class="clear-file webuploader-pick">清空</div>
+                        </a>
+                        <a id="file-upload-button">选择文件</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script id='form-components' type='application/json'>
+    [
+        {
+            "config": {},
+            "properties": [
+                {
+                    "id": "name",
+                    "comment": "由字母数字或下划线组成",
+                    "text": "字段",
+                    "value": ""
+                },
+                {
+                    "id": "comment",
+                    "editor": "textbox",
+                    "comment": "控件的中文描述",
+                    "text": "描述",
+                    "value": "多选"
+                },
+                {
+                    "id": "showComment",
+                    "text": "显示描述",
+                    "value": "true"
+                },
+                {
+                    "id": "emptyText",
+                    "text": "提示",
+                    "value": ""
+                },
+                {
+                    "id": "type",
+                    "editor": "textbox",
+                    "text": "控件类型"
+                },
+                {
+                    "id": "width",
+                    "text": "控件宽度",
+                    "value": "4"
+                },
+                {
+                    "id": "height",
+                    "text": "控件高度",
+                    "value": ""
+                },
+                {
+                    "id": "required",
+                    "editor": "radio",
+                    "text": "是否必填",
+                    "value": "undefined"
+                },
+                {
+                    "id": "option",
+                    "text": "选项配置",
+                    "value": {
+                        "type": "data",
+                        "data": [
+                            {
+                                "id": "1",
+                                "text": "选项1"
+                            },
+                            {
+                                "id": "2",
+                                "text": "选项2"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "id": "f654ca3c4e785ff3b153089095a530ef",
+            "cls": "mini-checkboxlist",
+            "typeName": "多选",
+            "type": "checkbox"
+        },
+        {
+            "config": {},
+            "properties": [
+                {
+                    "id": "name",
+                    "comment": "由字母数字或下划线组成",
+                    "text": "字段",
+                    "value": ""
+                },
+                {
+                    "id": "comment",
+                    "editor": "textbox",
+                    "comment": "控件的中文描述",
+                    "text": "描述",
+                    "value": "单选"
+                },
+                {
+                    "id": "showComment",
+                    "text": "显示描述",
+                    "value": "true"
+                },
+                {
+                    "id": "emptyText",
+                    "text": "提示",
+                    "value": ""
+                },
+                {
+                    "id": "type",
+                    "editor": "textbox",
+                    "text": "控件类型"
+                },
+                {
+                    "id": "width",
+                    "text": "控件宽度",
+                    "value": "4"
+                },
+                {
+                    "id": "height",
+                    "text": "控件高度",
+                    "value": ""
+                },
+                {
+                    "id": "required",
+                    "editor": "radio",
+                    "text": "是否必填",
+                    "value": "undefined"
+                },
+                {
+                    "id": "option",
+                    "text": "选项配置",
+                    "value": {
+                        "type": "data",
+                        "data": [
+                            {
+                                "id": "1",
+                                "text": "选项1"
+                            },
+                            {
+                                "id": "2",
+                                "text": "选项2"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "id": "856ef435eb0e5854dcc066b357e65ff6",
+            "cls": "mini-radiobuttonlist",
+            "typeName": "单选",
+            "type": "radio"
+        }
+    ]
+</script>
+<style id='form-css' type='text/css'>
+
+</style>
+<script id='form-on-init' type='text/plain'>
+
+</script>
+<div style="width: 100px;margin: auto">
+    <a class="mini-button save-button" iconCls="icon-save" plain="true">保存</a>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    window.formOnLoad = function (parser) {
+        $(".save-button").on("click", function () {
+            var data = parser.getData();
+            mini.alert(JSON.stringify(data));
+        });
+    }
+</script>

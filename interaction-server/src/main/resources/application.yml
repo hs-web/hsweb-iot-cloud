@@ -1,0 +1,86 @@
+server:
+    port: 9012
+logging:
+  level:
+    business: TRACE
+spring:
+  aop:
+      auto: true
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    max-active: 1000
+    initial-size: 5
+    min-idle: 5
+    max-wait: 50000
+    min-evictable-idle-time-millis: 300000
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    pool-prepared-statements: false
+    validation-query: select 1
+    time-between-eviction-runs-millis: 60000
+    max-open-prepared-statements: 2000
+  application:
+    name: interaction-server
+  profiles:
+    active: dev
+  cloud:
+    stream:
+      default:
+        group: ${spring.application.name}
+        consumer:
+          header-mode: raw
+          content-type: application/json
+        producer:
+          header-mode: raw
+          content-type: application/json
+hsweb:
+    app:
+      name: 物联网交互服务
+      version: 1.0.0
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka-host:localhost}:${eureka-port:8761}/eureka/
+  instance:
+    appname: ${spring.application.name}
+    app-group-name: "后台管理"
+feign:
+  hystrix:
+    enabled: true
+mybatis:
+  mapper-locations: classpath*:org/hswebframework/iot/**/*Mapper.xml
+  type-handlers-package: org.hswebframework.iot.interaction.enums
+
+iot:
+  logger:
+    stream:
+      producer: true #不将日志推送到kafka
+  redis:
+    enable: true
+    default:  #默认的redis配置
+      enable: true
+      host: redis://127.0.0.1:6379
+      database: 0
+vertx:
+  service-id: ${spring.application.name}
+  udp:
+    port: 5010
+    host: 0.0.0.0
+  mqtt:
+    port: 1883
+    accept-backlog: 2048
+    send-buffer-size: 10240
+    receive-buffer-size: 32768
+  h-a-enabled: true
+  h-a-group: _DEFAULT_
+  cluster-host: 127.0.0.1 #告诉集群本机的ip
+  clustered: true #开启vertx集群
+  cluster:
+    config:
+      zookeeperHosts: 127.0.0.1:2181
+      rootPath: hsweb.iot.cloud
+      retry:
+        initialSleepTime: 3000
+        maxTimes: 3

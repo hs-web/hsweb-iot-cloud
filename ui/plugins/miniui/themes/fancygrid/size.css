@@ -1,0 +1,553 @@
+﻿/* button */
+.mini-button,body a:hover.mini-button
+{
+    font-size:15px;
+    border-radius: 3px;
+    padding:3px;
+}
+.mini-button-text
+{   
+    font-size: 12px;
+    font-weight: bold;
+    font-family: helvetica,arial,verdana,sans-serif;
+    padding: 0 5px;
+}
+body a.mini-button-disabled, body a:hover.mini-button-disabled
+{
+    padding:3px;  
+}
+.mini-iconfont
+{
+    font-size:20px;
+    color:White;    
+}
+.mini-button-icon
+{
+    left:0;
+    opacity: .5;    
+}
+.mini-button-iconLeft .mini-button-icon-text 
+{
+    padding-left: 22px;
+}
+.mini-button .mini-button-icon-only 
+{
+    padding: 0 7px;
+}
+.mini-button .mini-button-icon-only .mini-button-icon 
+{
+    left: 0px;
+}
+
+.mini-button-iconRight .mini-button-icon 
+{
+    right: 0px;
+}
+.mini-button-iconRight .mini-button-icon-text 
+{
+    padding-right: 19px;
+}
+.mini-button-iconBottom .mini-button-icon-text 
+{
+    padding-left: 8px;
+    padding-bottom: 22px;
+}
+.mini-button-iconBottom .mini-button-icon {
+    left: 50%;
+    margin-left: -9px;
+    top: 26px;
+    margin-bottom: auto;
+}
+
+/* menu button */
+
+
+body a.mini-button-popup, body a:hover.mini-button-popup
+{
+    padding:3px;
+}
+.mini-button-allow {
+    width: 14px;
+    height: 16px;
+    vertical-align: top;
+    margin-top: 0;
+}
+/*.mini-menu.mini-menu-open
+{
+    width:120px!important;    
+}*/
+.mini-menu-border,.mini-menu-popup,.mini-menuitem-hover 
+{
+    border:0;
+    padding:1px;
+}
+.mini-menu-border
+{
+    padding:0;    
+}
+/* mini-menu */
+.mini-menu
+{  
+    font-size:14px; 
+}
+.mini-menuitem-inner
+{
+    padding:0 4px 0 27px; 
+    line-height: 24px;  
+}
+.mini-menuitem-icon
+{
+    left:6px;
+    top:6px;
+} 
+.mini-menuitem-icon.mini-iconfont.icon-columns
+{
+    top:4px;    
+}
+.mini-menuitem-allow
+{
+    top:6px;
+    right:6px;    
+}
+.mini-menu-horizontal .mini-menu-inner
+{
+    padding:6px;
+}
+.mini-menu-horizontal .mini-menuitem-inner
+{
+    padding:4px 10px 4px 10px;
+}
+.mini-menu-horizontal .mini-menuitem-icon
+{
+    margin-right:4px;
+}
+
+/* panel */
+.mini-panel-border{}
+.mini-panel .mini-button
+{
+    font-size:14px;
+    line-height:16px;
+    
+}
+.mini-panel .mini-button-text
+{   
+    
+    line-height:16px;
+}
+.mini-tools span
+{
+    width:16px;
+    height:16px;
+    margin-left:8px;    
+}
+.speical .mini-panel-body
+{
+    padding:0;    
+}
+/* textbox */
+.mini-textbox-input
+{
+    height:22px;
+    line-height:22px;
+    font: normal 14px helvetica,arial,verdana,sans-serif;
+}
+.mini-textbox-border
+{
+    padding-left:8px;
+    padding-right:8px;
+    height:22px;
+}
+.mini-textbox.noborder .mini-textbox-border
+{
+    border:0;background:none;cursor:default;    
+}
+.mini-textbox
+{
+    overflow:visible;
+    height:24px;
+    width:150px;
+}
+.mini-labelfield-label {
+    font-family: 微软雅黑;
+    font-size: 16px;
+    line-height: 24px;
+}
+/* buttonedit */
+.mini-buttonedit-input
+{
+    height:22px;
+    line-height:22px;
+    font-size:14px;
+}
+.mini-buttonedit-border
+{
+    padding-left:6px;
+    padding-right:25px;
+    height:24px;
+}
+.mini-buttonedit
+{
+    overflow:visible;
+    height:24px;
+    width:150px;
+}
+.mini-buttonedit-button
+{
+    height:22px;
+    width:22px;
+}
+.mini-buttonedit-button, .mini-buttonedit-close
+{
+    margin-right:0;    
+}
+.mini-buttonedit-button-hover 
+{
+    height:22px;
+    width:22px;
+}
+
+.mini-buttonedit-close
+{
+    height:21px;
+}
+.mini-buttonedit-icon,.mini-buttonedit-button-hover .mini-buttonedit-icon
+{
+    width:20px;
+    height:20px;  
+    left:50%;
+    margin-top: -12px;  
+}
+/* layout */
+
+.mini-layout .mini-menuitem
+{
+    padding:0;
+    padding-top:4px;
+    padding-bottom:3px;
+    border-bottom:1px dotted #e4e4e4;
+}
+.mini-layout .mini-menuitem .mini-menuitem-inner
+{
+    font-size:14px;
+    font-family:楷体;
+    font-weight:normal;
+}
+.mini-layout .mini-menuitem-inner .mini-menuitem-text,.mini-layout .mini-menuitem-inner .mini-menuitem-text a
+{
+    
+    font-weight:normal;  
+    padding-left:0px;  
+}
+
+body .mini-layout .mini-menuitem-icontop .mini-menuitem-inner
+{
+    padding:0;    
+}
+.mini-layout .mini-menuitem.mini-menuitem-hover,
+.mini-layout .mini-menuitem.mini-menuitem-selected.mini-menuitem-hover,
+.mini-layout .mini-menuitem.mini-menuitem-selected
+{
+    border:0;
+    border-bottom:1px dotted #e4e4e4;   
+}
+/* outlookbar */
+.mini-outlookbar .mini-outlookbar-icon
+{
+    width:20px;
+    height:21px;
+    line-height:21px;    
+}
+.mini-outlookbar-groupHeader .mini-tools {
+    top: 8px;
+    right: 12px;
+}
+.mini-outlookbar .mini-outlookbar-groupHeader
+{
+    padding:8px 10px;     
+}
+.mini-outlookbar-groupHeader 
+{
+    font-size:14px;
+    font-family:微软雅黑; 
+    line-height:16px; 
+    padding:0;
+    font-weight: bold;
+    font-family: helvetica,arial,verdana,sans-serif;
+    text-transform: none; 
+}
+.mini-outlookbar-groupTitle
+{
+    width:auto;    
+}
+/*  datagrid  */
+.mini-grid-headerCell
+{
+    border-right:1px solid silver; 
+    
+}
+.mini-grid-summaryCell
+{
+    border-right:1px solid #e1f1f3;
+    line-height:30px;    
+}
+.mini-grid-headerCell-inner
+{   
+    padding: 7px 0px 7px 0px;
+}
+.mini-grid-cell-inner
+{
+    padding:5px 0px 4px 0px;  
+}
+.mini-grid-cell
+{
+    border-right: 1px solid #ededed;
+    padding:0 10px;    
+}
+.mini-grid-detailCell
+{
+    padding:0;
+    border:0;    
+}
+.mini-grid-headerCell-outer
+{
+    padding:0 10px;  
+}
+.mini-menu-inner
+{
+    padding-right:0;    
+}
+/* pager */
+.mini-pager
+{
+    height:30px;
+    line-height:30px;
+    padding:4px 7px 4px 6px; 
+    font-size: 14px;
+    font-family: 微软雅黑;  
+}
+body .mini-pager-num
+{
+    height:20px;
+    line-height:20px;
+}
+.mini-pager-size .mini-combobox
+{
+    width:60px;
+}
+.mini-pager-left
+{
+    float:left;
+}
+.mini-pager-right
+{   
+    float:right;
+}
+.mini-pager .mini-button
+{
+    line-height:12px;
+        
+}
+.mini-pager .mini-button-text
+{   
+    padding:8px 14px 8px 20px;
+    line-height:12px;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: 微软雅黑;
+}
+body .mini-pager-size .mini-buttonedit .mini-buttonedit-border
+{
+    border-color:#ddd;    
+}
+.mini-pager .mini-button .mini-button-icon-only .mini-button-icon 
+{
+    left: 10px;
+}
+/* toolbar */
+.mini-toolbar table {
+    font-family:微软雅黑;
+    font-size:16px;
+    color:#5e5e5e;    
+}
+.toolbar .mini-iconfont 
+{
+    font-size: 16px;
+    color: #666;
+    opacity: .5;
+}
+/* textboxlist */
+.mini-textboxlist
+{
+    height:30px;
+}
+.mini-textboxlist ul
+{
+    padding-top:3px;
+    padding-left:8px;
+}
+.mini-textboxlist .mini-textboxlist-item
+{
+    font-size:14px;
+    line-height:20px;
+    height:20px;
+}
+.mini-textboxlist .mini-errorIcon
+{
+    margin-top:4px;
+}
+.mini-textboxlist .mini-textboxlist-input
+{
+    height:18px;
+    line-height:18px;
+}
+
+/* htmlfile
+==========================================*/
+.mini-htmlfile .mini-buttonedit-button
+{
+	line-height:21px;        
+}
+
+/* tabs */
+/*.mini-tabs.mini-tabs-position-top
+{
+    padding-top:10px!important;
+}*/
+.mini-tab
+{
+    padding:7px 12px 6px 12px;
+}
+.mini-tab-text
+{
+    font-size:13px;
+    line-height:16px;
+    padding:0;    
+}
+.mini-tabs-plain
+{
+    line-height:18px;
+}
+.mini-tab-close
+{
+    width:16px;height:16px; 
+    opacity: .5;
+    filter: alpha(opacity=50);
+    margin-left:10px;
+    margin-top:0;
+}
+.mini-tabs-tabmenu
+{
+    top:7px;
+    right:4px;
+    width:22px;
+    height:22px;    
+    margin-right:6px;
+}
+.mini-tabs-nav,
+.mini-tabs-leftnav
+{
+    top:0px;
+    padding-left: 8px;
+    padding-right: 4px;
+}
+.mini-tabs-leftButton, .mini-tabs-rightButton
+{    
+    width:24px;
+    height:28px;
+    margin-right:4px;
+}
+.mini-tabs-buttons
+{
+    padding-top:6px;
+}
+/* panel */
+
+.mini-panel-header
+{
+    border:0;    
+}
+.mini-panel-header-inner
+{	
+    padding:12px 12px 12px 18px;
+    font-size:16px;
+}
+.mini-panel .mini-panel-icon
+{
+    margin-right:8px;
+}
+.mini-panel .mini-tools
+{
+    top:12px;
+    right:10px;
+}
+.mini-panel-body
+{
+    padding:8px;
+}
+.mini-panel.mini-window.mini-window-drag.mini-messagebox
+{
+    /*width:400px!important;
+    height:250px!important; */   
+}
+.mini-messagebox .mini-messagebox-buttons 
+{
+    padding-top: 0px;
+}
+.mini-messagebox .mini-messagebox-content-text 
+{
+    padding-top: 10px;
+    padding-right: 0;
+}
+.mini-window .mini-panel-header
+{
+    background:#fff;    
+}
+.mini-window .mini-panel-header .mini-panel-header-inner
+{
+    color:#dce8d4;
+    font-size:18px;
+    font-family:微软雅黑; 
+    font-weight:normal;
+    
+}
+
+/* message */
+.mini-messagebox-info,
+.mini-messagebox-warning,
+.mini-messagebox-question,
+.mini-messagebox-error,
+.mini-messagebox-waiting
+{
+    display:none;    
+}
+.mini-messagebox-content-text
+{
+    color:#5e5e5e;
+    font-family:微软雅黑;
+    padding-top:30px; 
+    padding-left:16px; 
+    padding-right:0;  
+}
+.mini-messagebox-content td
+{
+    font-size:16px;     
+}
+.mini-messagebox-buttons
+{
+    padding-top:40px;    
+}
+/* checkboxlist */
+.mini-checkboxlist
+{
+    overflow:visible;  
+    font-size: 11pt;  
+}
+.mini-checkboxlist table label
+{
+    line-height:30px;    
+}
+.mini-checkboxlist-item
+{
+    margin-right:15px;    
+}

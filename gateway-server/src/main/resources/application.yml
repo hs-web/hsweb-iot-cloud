@@ -1,0 +1,77 @@
+server:
+  compression:
+    enabled: true
+    mime-types: text/plain,application/javascript,application/x-javascript,text/css,application/xml,application/json
+    min-response-size: 1024
+  port: 8000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka-host:localhost}:${eureka-port:8761}/eureka/
+  instance:
+    appname: dashboard-zuul-gateway
+    app-group-name: "后台管理"
+
+zuul:
+  prefix: /api
+  routes:
+    user-server:
+      path: /user-server/**
+      service-id: user-server
+
+  sensitive-headers: Cookies,iot-cloud-autz,iot-cloud-basic #防止越权使用内部header
+  host: #30秒超时
+    connect-timeout-millis: 30000
+file-server:
+  ribbon:
+    ReadTimeout: 60000
+    ActiveConnectionsLimit: 2000
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 1000
+  eureka:
+    enabled: true
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: gateway-server
+  datasource:
+     type: com.alibaba.druid.pool.DruidDataSource
+     url: jdbc:h2:file:./data/${spring.application.name}
+     username: sa
+     password:
+     validation-query: select 1
+  resources:
+      static-locations: file:./ui/,file:./static/,/,classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/, classpath:/public/
+  http:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 120MB
+hsweb:
+    app:
+      name: 物联网平台网关服务
+      version: 1.0.0
+    cors:
+      allowed-headers: "*"
+      allowed-methods: "*"
+      allowed-origins: "*"
+      exposed-headers: "request-id"
+      allow-credentials: true
+      enable: true
+      max-age: 14400
+
+feign:
+  hystrix:
+    enabled: true
+
+user-server: #要从用户服务获取数据时需要的授权配置,为用户服务中有效的的用户名密码
+  client-id: gateway-server
+  client-security: admin

@@ -1,0 +1,14 @@
+server:
+  port: 8761
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+  server:
+    # 自我保护模式，当出现出现网络分区、eureka在短时间内丢失过多客户端时，会进入自我保护模式，即一个服务长时间没有发送心跳，eureka也不会将其删除，默认为true
+    enable-self-preservation: true
+    eviction-interval-timer-in-ms: 5000
+spring:
+  application:
+    name: eureka-server
+

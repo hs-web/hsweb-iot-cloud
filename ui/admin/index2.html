@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+    <title>物联网及智慧家庭云管理平台</title>
+    <script data-main="index2.js" src="boot.js" type="text/javascript"></script>
+</head>
+<body style="display: none">
+<div id="layout" class="mini-layout" style="width:100%;height:100%;">
+    <div class="header" showProxyText="true" region="north" height="64" showSplit="false" showHeader="false" splitSize="0">
+        <div id="headerLayout" class="w-header">
+            <div style="width:100%;overflow:hidden;">
+                <div class="w-logo">
+                    物联网及智慧家庭云管理平台
+                </div>
+                <div class="top-menu w-menus">
+                    <a class="link" onclick="window.onbeforeunload=function(){};window.location.reload()">
+                        <i class="fa fa-home"></i>
+                        首页
+                    </a>
+
+                    <a class="link settings">
+                        <i class="fa fa-gear"></i>
+                        <span class="username">请登录</span>
+                    </a>
+
+                    <a class="link login-out">
+                        <i class="fa fa-sign-out"></i>
+                        注销
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div title="south" region="south" showSplit="false" showHeader="false" height="30" splitSize="0">
+        <div class="w-footer">
+            当前在线人数:<span class="online-number">0</span>
+        </div>
+    </div>
+    <div showHeader="true" class="main-menu" title="导航" region="west" width="180" height="100%" maxWidth="250" minWidth="100" splitSize="0">
+        <div id="leftTree" class="mini-outlooktree" style="height: 100%"
+             expandOnLoad="false" resultAsTree="false" ajaxOptions="{type:'GET'}"
+             showTreeIcon="true" iconField="icon"
+             idField="id" parentField="parentId" textField="name" borderStyle="border:0">
+        </div>
+    </div>
+    <div title="center" region="center" bodyStyle="overflow:hidden;" splitSize="0">
+        <!--默认标签页-->
+        <div id="mainTabs" closeclick="oncloseclick" class="mini-tabs" activeIndex="0" style="width:100%;height:100%;">
+            <div title="首页" name="first" style="text-align: center;width: 100%;margin: auto;">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="loginWindow" class="mini-window" title="用户登录" style="width:350px;height:205px;display: none" showModal="true"
+     showCloseButton="false">
+    <div id="loginForm" style="padding:15px;padding-top:10px;">
+        <table>
+            <tr>
+                <td style="width:60px;"><label>帐号：</label></td>
+                <td>
+                    <input id="username" name="username" class="mini-textbox" required="true"
+                           style="width:150px;"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:60px;"><label>密码：</label></td>
+                <td>
+                    <input id="password" name="password" class="mini-password" required="true"
+                           requiredErrorText="密码不能为空" required="true" style="width:150px;"/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="padding-top:5px;">
+                    <a class="mini-button login-button" style="width:60px;">登录</a>
+                    <a class="mini-button reset-button" style="width:60px;">重置</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

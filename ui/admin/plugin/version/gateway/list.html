@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <title>插件版本管理</title>
+    <script data-main="list.js" src="../../../boot.js" type="text/javascript"></script>
+    <style type="text/css"></style>
+</head>
+<body style="display: none">
+
+<div class="mini-toolbar" style="border-bottom: 0;">
+    <table id="search-box">
+
+        <tr>
+            <td style="width: 100%">
+                <a class="mini-button install-button">安装插件</a>
+                <a class="mini-button update-button">升级版本</a>
+                <a class="mini-menubutton" menu="#popupMenu">更多操作</a>
+            </td>
+            <td style="white-space: nowrap">
+                安装状态：<input showNullItem="true"
+                            valueField="id" textField="text" value="all" class="mini-combobox" id="statusCombol"
+                            data="[{id:'all',text:'全部'},{id:'yes',text:'已安装'},{id:'no',text:'未安装'}]"/>
+                SN：<input name="sn" class="mini-textbox"/>
+
+                <a class="mini-button search-button" plain="true" iconCls="icon-search">搜索</a>
+            </td>
+        </tr>
+        <ul id="popupMenu" class="mini-menu" style="display:none;">
+            <li class="stop-button">停止</li>
+            <li class="start-button">启动</li>
+            <li class="uninstall-button">卸载</li>
+        </ul>
+    </table>
+</div>
+<div class="mini-fit">
+    <div id="datagrid" class="mini-datagrid" style="width:100%;height: 100%;margin: auto;" showPager="true" multiSelect="true" >
+        <div property="columns">
+            <div type="indexcolumn">序号</div>
+            <div type="checkcolumn"></div>
+            <div field="deviceGateway.name" width="100" headerAlign="center" allowSort="true"  align="center">名称</div>
+            <div field="deviceGateway.type" width="100" headerAlign="center" allowSort="true" align="center" renderer="renderType">设备类型</div>
+            <div field="deviceGateway.status" width="100" headerAlign="center" allowSort="true" align="center" renderer="renderStatus">设备状态</div>
+            <div field="deviceGateway.serialNo" width="100" headerAlign="center" align="center">网关序列号</div>
+            <div field="deviceGateway.caSn" width="100" headerAlign="center" align="center">CA卡序列号</div>
+            <div field="deviceGateway.oui" width="100" headerAlign="center" allowSort="true" align="center">生产厂家代码</div>
+            <div field="deviceGateway.prdclass" width="100" headerAlign="center" align="center">产品型号代码</div>
+            <div field="deviceGateway.installStatus" width="100" headerAlign="center" allowSort="false" align="center">是否安装</div>
+            <div field="pluginGateway.status" width="100"  headerAlign="center" renderer="pluginStatus" align="center">状态</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

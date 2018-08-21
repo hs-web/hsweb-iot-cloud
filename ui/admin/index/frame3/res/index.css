@@ -1,0 +1,224 @@
+﻿*,
+*:before,
+*:after{    
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body
+{
+    margin:0;
+    height:100%;
+    overflow:hidden;
+    
+    font-family:微软雅黑;
+    font-size:13px; 
+}
+
+a {
+  text-decoration: none;
+}
+
+/* layout */
+.sidebar
+{
+    position:absolute;
+    width:80px;
+    top:0;
+    left:0;
+    bottom:0;
+    background:#42485b;
+}
+
+.container {
+    position:absolute;
+    left:80px;
+    top:0;
+    bottom:0;
+    right:0;
+    background:#fff;
+}
+
+.navbar
+{
+    height:50px;
+    background:#fff;
+    border-bottom:0;
+}
+
+
+
+.main
+{
+    position:absolute;
+    top:50px;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#ffffff;
+}
+
+
+/* header */
+
+.navbar-brand
+{
+    width:110px;
+    background:#fff;
+    cursor:default;
+    font-size: 20px;
+    font-weight: bold;    
+}
+.navbar-brand, .navbar-brand:hover, .navbar-brand:focus
+{
+    /*color:#3498DB;*/
+    color:#333;
+}
+
+
+.navbar-nav > li > a
+{
+    padding-top:16px;
+}
+
+.navbar-nav > li > a,
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus,
+.navbar-nav > li.active > a,
+.navbar-nav li.open a.dropdown-toggle
+{
+    background:#fff;
+    color:#333;
+}
+
+.navbar-nav > li > a.userinfo
+{
+    padding-top:10px;
+}
+.userinfo > img {
+    height: 35px;
+    width: 35px;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-right:4px;
+}
+
+.dropdown-menu
+{    
+    font-size:13px;
+}
+.dropdown-menu i
+{
+    min-width:18px;
+    margin-right:2px;
+}
+
+
+/* compact */
+.compact .sidebar,
+.compact .navbar-brand
+{
+    width:60px;
+}
+.compact .main
+{
+    left:60px;
+}
+
+.navbar-brand-compact,
+.compact .navbar-brand
+{
+    display:none;
+}
+.compact .navbar-brand-compact
+{
+    display:block;
+}
+
+.compact .menu-text,
+.compact .menu-arrow
+{
+    display:none;
+}
+
+.compact .menu-title
+{
+    padding-left:0px !important;
+    text-align:center;
+}
+
+/* icontop */
+
+.navbar-nav > li.icontop > a{
+    padding:0 15px;
+}
+.icontop i
+{
+    padding-top: 4px;
+    text-align: center;
+    display: block;
+    font-size: 25px;
+    line-height: 25px;
+    width: 100%;
+    margin: 0;
+}
+.icontop span {
+    text-align: center;
+    display: block;
+    line-height: 21px;
+    width: 100%;
+    margin: 0;
+}
+
+/* sidebar-toggle */ 
+.sidebar-toggle 
+{
+    height:30px;
+    line-height: 30px;
+    color: #aeb9c2;
+    background-color: #4a5064;
+    font-size: 14px;
+    text-align: center;
+    cursor:pointer;
+}
+.sidebar-toggle .fa {
+    margin-top: 10px;
+}
+.sidebar-toggle:hover .fa {
+    color: #fff;
+}
+
+
+.menutip
+{
+    z-index:100;
+}
+
+
+
+/*.mCustomScrollBox, .mCSB_container
+{
+    overflow:visible !important;
+}*/
+
+.sidebar
+{
+    width:800px;
+    /*overflow:hidden;
+    overflow-x:visible;*/
+}
+.sidebar .menu
+{
+    width:80px;
+}
+
+.mCSB_scrollTools
+{
+    left:65px;
+    right:auto;
+}
+.mCSB_container
+{
+    /*height:100%;*/
+}

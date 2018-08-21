@@ -1,0 +1,7 @@
+eureka-host: localhost
+eureka-port: 8761
+
+eureka:
+  client:
+    registry-fetch-interval-seconds: 1 #每1秒从注册中心获取注册表信息
+    instance-info-replication-interval-seconds: 10 #复制实例变化信息到eureka服务器所需要的时间间隔（s），默认为30秒
