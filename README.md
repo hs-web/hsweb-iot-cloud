@@ -6,15 +6,17 @@
 提供一个开源的物联网管理平台,支持各种设备接入,并完成数据上报,分析,处理等自定义功能.
 
 ### 技术栈
+1. java8,maven3
+2. [spring-boot](https://spring.io/projects/spring-boot): 整合各种组件
+3. [spring-cloud](https://spring.io/projects/spring-cloud): 对微服务提供支持
+4. [hsweb-framework](https://github.com/hs-web/hsweb-framework): 基础业务框架
+5. [vertx](https://vertx.io/): 物联网通信(mqtt,udp)
+6. [redisson](https://github.com/redisson/redisson): redis客户端
+7. [spring-cloud-stream](https://cloud.spring.io/spring-cloud-stream/): 事件驱动
+8. [kafka](http://kafka.apache.org/): 消息中间件
+9. [docker](https://www.docker.com/): 快速环境搭建,持续交付
 
-1. [spring-boot](https://spring.io/projects/spring-boot): 整合各种组件
-2. [spring-cloud](https://spring.io/projects/spring-cloud): 对微服务提供支持
-3. [hsweb-framework](https://github.com/hs-web/hsweb-framework): 基础业务框架
-4. [vertx](https://vertx.io/): 物联网通信(mqtt,udp)
-5. [redisson](https://github.com/redisson/redisson): redis客户端
-6. [spring-cloud-stream](https://cloud.spring.io/spring-cloud-stream/): 事件驱动
-7. [kafka](http://kafka.apache.org/): 消息中间件
-8. [docker](https://www.docker.com/): 快速环境搭建,持续交付
+在使用本项目之前,你应该对以上技术有所了解.
 
 ### 模块介绍
 
