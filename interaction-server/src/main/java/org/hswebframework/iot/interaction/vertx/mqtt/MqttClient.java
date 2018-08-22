@@ -55,6 +55,7 @@ public class MqttClient implements Client {
     public void ping() {
         log.debug("mqtt client[{}] ping", getClientId());
         lastPingTime = System.currentTimeMillis();
+        endpoint.pong();
     }
 
     @Override
