@@ -31,6 +31,7 @@
      ------------------iot-logging          # 访问日志,系统日志集成
      ------------------iot-redis            # redis集成
      ------------------server-dependencies  # 微服务通用依赖
+     -------------mqtt-emulator             # mqtt客户端模拟器
      -------------user-server               # 用户服务
      -------------interaction-server        # 物联网设备交互服务
      

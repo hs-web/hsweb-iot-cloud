@@ -1,0 +1,16 @@
+[
+  {
+    "action": "temp-test",
+    "data": {
+      "key": 1,
+      "key2": "2"
+    }
+  },
+  {
+    "action": "temp-test",
+    "data": {
+      "key": 10000,
+      "key2": "value"
+    }
+  }
+]

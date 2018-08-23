@@ -1,0 +1,10 @@
+参数:
+servers=tcp://host:port    # mqtt的服务器地址
+clients=./data/clients.txt # 需要连接的客户端列表文件
+autoReconnect=*true/false  # 是否自动重连
+skip=0                     # 从clients.txt的第几行开始
+limit=2147483647           # 最大客户端数量
+disableReport=true/*false  # 是否定时上报数据,上报数据的文件为./data/report.json中的随机内容
+
+例如:
+java -jar mqtt-benchmark.run.jar disableReport=true servers=tcp://mqtt-server:1883

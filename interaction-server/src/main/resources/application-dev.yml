@@ -20,5 +20,5 @@ logging:
   level:
     org.hswebframework.web: DEBUG
     org.hswebframework.web.cache: WARN
-    org.hswebframework.iot: DEBUG
+#    org.hswebframework.iot: warn
     org.apache.kafka.clients: warn

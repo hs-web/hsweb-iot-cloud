@@ -23,3 +23,4 @@ pom.xml.versionsBackup
 build/
 /data/
 !/.mvn/wrapper/maven-wrapper.jar
+bin/
