@@ -8,7 +8,7 @@
 
 1. data/clients.txt ,要连接的客户端列表,一个客户端一行,格式: clientId:password
 2. data/reply.json , 客户端收到服务器指令是做出回复的数据.
-```json
+```js
     {
        //(对应服务端指令中的operation)
       "PLUGIN_INSTALL": 
