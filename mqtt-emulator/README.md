@@ -58,12 +58,12 @@
 
 # docker
 ```bash
-   $ docker run -it --rm hsweb/iot-cloud-mqtt-benchmark servers=tcp://mqtt-host:1883
+   $ docker run -it --rm hsweb/iot-cloud-mqtt-emulator servers=tcp://mqtt-host:1883
 ```
 
 使用自定义数据
 ```bash
-   $ docker run -v my-data-dir:/app/data -it --rm hsweb/iot-cloud-mqtt-benchmark servers=tcp://mqtt-host:1883
+   $ docker run -v my-data-dir:/app/data -it --rm hsweb/iot-cloud-mqtt-emulator servers=tcp://mqtt-host:1883
 ```
 
 # 参数
