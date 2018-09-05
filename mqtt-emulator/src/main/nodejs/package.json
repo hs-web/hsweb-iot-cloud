@@ -1,0 +1,11 @@
+{
+  "name": "hsweb-mqtt-emulator",
+  "version": "0.0.1",
+  "description": "hsweb qmtt 模拟器",
+  "license": "Apache 2.0",
+  "dependencies": {
+    "single-line-log": "latest",
+    "mqtt": "latest",
+    "line-reader": "latest"
+  }
+}

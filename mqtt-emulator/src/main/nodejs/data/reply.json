@@ -1,0 +1,46 @@
+{
+  "PLUGIN_INSTALL": [
+    {
+      "operation": "plugin",
+      "delay": [
+        0,
+        10000
+      ],
+      "code": 0
+    }
+  ],
+  "PLUGIN_START": [
+    {
+      "operation": "plugin",
+      "delay": [
+        0,
+        10000
+      ],
+      "code": 0
+    },
+    {
+      "operation": "plugin",
+      "code": 1
+    }
+  ],
+  "PLUGIN_STOP": [
+    {
+      "operation": "plugin",
+      "delay": [
+        0,
+        10000
+      ],
+      "code": 0
+    }
+  ],
+  "PLUGIN_UNINSTALL": [
+    {
+      "operation": "plugin",
+      "delay": [
+        0,
+        10000
+      ],
+      "code": 0
+    }
+  ]
+}

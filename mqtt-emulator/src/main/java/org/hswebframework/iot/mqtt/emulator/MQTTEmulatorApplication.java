@@ -94,7 +94,7 @@ public class MQTTEmulatorApplication {
 
         clients = allLine.parallelStream()
                 .map(line -> {
-                    String[] np = line.split("[:]");
+                    String[] np = line.split("[: \t]");
                     String errorMessage = "";
                     try {
                         return connect(servers, np[0], np[1]);
