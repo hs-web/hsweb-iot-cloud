@@ -14,7 +14,8 @@ var argsMap = function () {
         "reportData": "./data/report.json",
         "disableReport": "false",
         "skip": 0,
-        "limit": 1000
+        "limit": 1000,
+        "disableProgress":"false"
     };
 
     process.argv.splice(2)
@@ -32,7 +33,7 @@ var index = 0;
 var skip = parseInt(argsMap['skip']);
 var limit = parseInt(argsMap['limit']);
 var size = 0;
-var pb = new ProgressBar('启动进度', 50);
+var pb = new ProgressBar('启动进度', 50,argsMap["disableProgress"]==='true');
 
 lineReader.eachLine(clientsFilePath, function (line) {
     if (index++ >= skip) {
@@ -50,6 +51,8 @@ var connectCounter = 0;
 var errorCounter = 0;
 var completedCounter = 0;
 var allClient = [];
+var replyCounter = 0;
+var replySuccessCounter = 0;
 
 function parseJson(json) {
 
@@ -63,16 +66,14 @@ function parseJson(json) {
 
 //创建mqtt连接
 function doMqttConnect(clientId, pwd) {
-    if (connectCounter === 0) {
-        pb.render({completed: 0, success: 0, error: errorCounter, total: limit});
-    }
     var client = mqtt.connect({
         host: serverUrl.hostname,
         port: serverUrl.port,
         protocol: serverUrl.protocol.split(":")[0],
         username: clientId,
         password: pwd,
-        clientId: clientId
+        clientId: clientId,
+        connectTimeout: 5 * 1000
     });
     var success = false;
     client.on('connect', function () {
@@ -82,6 +83,15 @@ function doMqttConnect(clientId, pwd) {
             doReply(client, parseJson(message));
         });
         allClient.push(client);
+    });
+    var reconnectCounter = 0;
+    client.on("reconnect", function () {
+        if (reconnectCounter++ > 3) {
+            if (!success) {
+                pb.render({completed: ++completedCounter, success: connectCounter, error: ++errorCounter, total: limit});
+                client.end();
+            }
+        }
     });
     client.on('error', function (error) {
         console.log(error.message, ":", clientId, pwd);
@@ -102,9 +112,6 @@ var reportDatas = function () {
     return JSON.parse(data);
 }();
 
-var replyCounter = 0;
-var replySuccessCounter = 0;
-
 function doReply(client, message) {
     replyCounter++;
     console.log("接收到服务器执行指令:", JSON.stringify(message));
@@ -113,6 +120,7 @@ function doReply(client, message) {
     if (datas) {
         var data = datas[random(0, datas.length - 1)];
 
+        // noinspection JSAnnotator
         function reply() {
             var newData = JSON.parse(JSON.stringify(data));
             delete newData.delay;
@@ -165,11 +173,22 @@ function doReport() {
 
 }
 
+console.log("use config : \n", JSON.stringify(argsMap, null, 4));
+
+doReport();
+
+if (connectCounter === 0) {
+    pb.render({completed: 0, success: 0, error: errorCounter, total: limit});
+}
 process.on('exit', function () {
     console.log("\n连接成功:", connectCounter, ",失败", errorCounter);
     console.log("上报:", reportCounter, "次,上报数据:", reportDataCounter, "次");
     console.log("接收指令:", replyCounter, "次,上报数据:", replySuccessCounter, "次");
 });
-console.log("use config : \n", JSON.stringify(argsMap, null, 4));
 
-doReport();
+process.stdin.on('readable', function () {
+    var chunk = process.stdin.read();
+    if (chunk && chunk.toString().trim() === 'q') {
+        process.exit(1);
+    }
+});

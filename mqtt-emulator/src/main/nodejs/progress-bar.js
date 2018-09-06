@@ -2,7 +2,7 @@
 var slog = require('single-line-log').stdout;
 
 // 封装的 ProgressBar 工具
-function ProgressBar(description, bar_length) {
+function ProgressBar(description, bar_length, disable) {
     // 两个基本参数(属性)
     this.description = description || 'Progress';    // 命令行开头的文字信息
     this.length = bar_length || 25;           // 进度条的长度(单位：字符)，默认设为 25
@@ -28,9 +28,16 @@ function ProgressBar(description, bar_length) {
         var cmdText = this.description + ': ' + (100 * percent).toFixed(0) + '% ' + cell + empty + ' 成功:' + opts.success + ',失败:' + opts.error + ',总数:' + opts.total;
 
         // 在单行输出文本
-        slog(cmdText);
-        slog.clear();
-        if(percent>=1){
+        // console.log(cmdText);
+        if (disable) {
+            if ((100 * percent) % 10 === 0) {
+                console.log(cmdText);
+            }
+        } else {
+            slog(cmdText);
+            slog.clear();
+        }
+        if (percent >= 1) {
             console.log("\n");
         }
     };
