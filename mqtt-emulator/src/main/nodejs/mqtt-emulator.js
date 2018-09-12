@@ -12,10 +12,10 @@ var argsMap = function () {
         "clients": "./data/clients.txt",
         "replyData": "./data/reply.json",
         "reportData": "./data/report.json",
-        "disableReport": "false",
+        "disableReport": "true",
         "skip": 0,
         "limit": 1000,
-        "disableProgress":"false"
+        "disableProgress": "false"
     };
 
     process.argv.splice(2)
@@ -33,7 +33,7 @@ var index = 0;
 var skip = parseInt(argsMap['skip']);
 var limit = parseInt(argsMap['limit']);
 var size = 0;
-var pb = new ProgressBar('启动进度', 50,argsMap["disableProgress"]==='true');
+var pb = new ProgressBar('启动进度', 50, argsMap["disableProgress"] === 'true');
 
 lineReader.eachLine(clientsFilePath, function (line) {
     if (index++ >= skip) {
@@ -73,13 +73,14 @@ function doMqttConnect(clientId, pwd) {
         username: clientId,
         password: pwd,
         clientId: clientId,
-        connectTimeout: 5 * 1000
+        connectTimeout: 20 * 1000
     });
     var success = false;
     client.on('connect', function () {
         pb.render({completed: ++completedCounter, success: ++connectCounter, error: errorCounter, total: limit});
         success = true;
         client.on('message', function (topic, message) {
+            console.log(topic, message)
             doReply(client, parseJson(message));
         });
         allClient.push(client);
@@ -158,13 +159,15 @@ function doReport() {
     } else {
         var reportSuccess = 0;
         allClient.forEach(function (client) {
-            var reportData = reportDatas[random(0, reportDatas.length)];
-            client.publish("report", JSON.stringify(reportData), {}, function (err) {
-                if (!err) {
-                    reportSuccess++;
-                    reportDataCounter++;
-                }
-            });
+            var reportData = reportDatas[random(0, reportDatas.length - 1)];
+            if (reportData) {
+                client.publish("report", JSON.stringify(reportData), {}, function (err) {
+                    if (!err) {
+                        reportSuccess++;
+                        reportDataCounter++;
+                    }
+                });
+            }
         });
         reportCounter++;
         console.log("执行数据上报,总数:", allClient.length, " 成功:", reportSuccess);
