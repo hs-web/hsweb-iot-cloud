@@ -73,29 +73,33 @@ function doMqttConnect(clientId, pwd) {
         username: clientId,
         password: pwd,
         clientId: clientId,
-        connectTimeout: 20 * 1000
+        connectTimeout: 100 * 1000
     });
     var success = false;
     client.on('connect', function () {
         pb.render({completed: ++completedCounter, success: ++connectCounter, error: errorCounter, total: limit});
         success = true;
         client.on('message', function (topic, message) {
-            console.log(topic, message)
             doReply(client, parseJson(message));
         });
         allClient.push(client);
     });
-    var reconnectCounter = 0;
     client.on("reconnect", function () {
-        if (reconnectCounter++ > 3) {
-            if (!success) {
-                pb.render({completed: ++completedCounter, success: connectCounter, error: ++errorCounter, total: limit});
-                client.end();
-            }
+        if (!success) {
+            pb.render({completed: ++completedCounter, success: connectCounter, error: ++errorCounter, total: limit});
         }
+        client.end();
+    });
+    client.on("disconnect", function () {
+       // console.log("client", clientId, "disconnect");
+        client.end();
+    });
+    client.on("close", function () {
+       // console.log("client", clientId, "closed");
+        client.end();
     });
     client.on('error', function (error) {
-        console.log(error.message, ":", clientId, pwd);
+       // console.log(error.message, ":", clientId, pwd);
         if (!success) {
             pb.render({completed: ++completedCounter, success: connectCounter, error: ++errorCounter, total: limit});
         }
