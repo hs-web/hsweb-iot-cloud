@@ -92,10 +92,16 @@ function doMqttConnect(clientId, pwd) {
     });
     client.on("disconnect", function () {
        // console.log("client", clientId, "disconnect");
+        if (!success) {
+            pb.render({completed: ++completedCounter, success: connectCounter, error: ++errorCounter, total: limit});
+        }
         client.end();
     });
     client.on("close", function () {
        // console.log("client", clientId, "closed");
+        if (!success) {
+            pb.render({completed: ++completedCounter, success: connectCounter, error: ++errorCounter, total: limit});
+        }
         client.end();
     });
     client.on('error', function (error) {
