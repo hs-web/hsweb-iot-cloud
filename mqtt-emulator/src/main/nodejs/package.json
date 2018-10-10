@@ -6,6 +6,7 @@
   "dependencies": {
     "single-line-log": "latest",
     "mqtt": "latest",
-    "line-reader": "latest"
+    "line-reader": "latest",
+    "unzip":"latest"
   }
 }

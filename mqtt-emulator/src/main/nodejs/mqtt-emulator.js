@@ -91,21 +91,15 @@ function doMqttConnect(clientId, pwd) {
         client.end();
     });
     client.on("disconnect", function () {
-       // console.log("client", clientId, "disconnect");
-        if (!success) {
-            pb.render({completed: ++completedCounter, success: connectCounter, error: ++errorCounter, total: limit});
-        }
+        console.log("client", clientId, "disconnect");
         client.end();
     });
     client.on("close", function () {
-       // console.log("client", clientId, "closed");
-        if (!success) {
-            pb.render({completed: ++completedCounter, success: connectCounter, error: ++errorCounter, total: limit});
-        }
+        console.log("client", clientId, "closed");
         client.end();
     });
     client.on('error', function (error) {
-       // console.log(error.message, ":", clientId, pwd);
+        // console.log(error.message, ":", clientId, pwd);
         if (!success) {
             pb.render({completed: ++completedCounter, success: connectCounter, error: ++errorCounter, total: limit});
         }
