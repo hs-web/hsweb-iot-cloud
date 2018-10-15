@@ -37,12 +37,12 @@ hsweb:
       name: 用户服务
       version: 1.0.0
     authorize:
-#      auto-parse: true
-#      sync: true
       allopatric-login-modes:
           iot-cloud-user: offlineOther #异地登录模式,踢出其他地方登录的用户
-    socket:
-      max-text-message-buffer-size: 10485760
+    users:
+      gateway-server: # 网关服务使用此用户来根据token获取用户权限信息
+        username: gateway-server
+        password: hsweb@gateway-server:user
 server:
     port: 8010
 eureka:
@@ -53,13 +53,12 @@ eureka:
     appname: ${spring.application.name}
 iot:
   redis:
-    enable: true
+    clients:
+      default:  #默认的redis配置
+        hosts: redis://127.0.0.1:6379
+        database: 0
     user-token:  # 开启redis管理user-token,只有user模块才需要开启
       enable: true
-    default:  #默认的redis配置
-#      enable: true
-      hosts: redis://127.0.0.1:6379
-      database: 0
 logging:
   level:
     system: TRACE

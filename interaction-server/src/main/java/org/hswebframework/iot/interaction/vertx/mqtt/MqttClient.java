@@ -9,18 +9,25 @@ import org.hswebframework.iot.interaction.vertx.client.Client;
 
 /**
  * @author zhouhao
- * @since 1.0.0
+ * @since 1.1.0
  */
 @Slf4j
 public class MqttClient implements Client {
 
     private MqttEndpoint endpoint;
 
+    private long connectTime = System.currentTimeMillis();
+
     private volatile long lastPingTime = System.currentTimeMillis();
 
     public MqttClient(MqttEndpoint endpoint) {
         endpoint.pingHandler(r -> ping());
         this.endpoint = endpoint;
+    }
+
+    @Override
+    public long connectTime() {
+        return connectTime;
     }
 
     @Override
@@ -48,13 +55,17 @@ public class MqttClient implements Client {
         if (endpoint.isConnected()) {
             endpoint.close();
         }
-
     }
 
     @Override
     public void ping() {
         log.debug("mqtt client[{}] ping", getClientId());
         lastPingTime = System.currentTimeMillis();
+    }
+
+    @Override
+    public boolean alive() {
+        return endpoint.isConnected();
     }
 
     @Override

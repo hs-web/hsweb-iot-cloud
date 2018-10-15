@@ -10,7 +10,7 @@ import org.hswebframework.iot.interaction.vertx.client.Client;
 
 /**
  * @author zhouhao
- * @since 1.0.0
+ * @since 1.1.0
  */
 @Slf4j
 public class UDPClient implements Client {
@@ -22,6 +22,8 @@ public class UDPClient implements Client {
     private DatagramSocket socket;
 
     private long lastPingTime = System.currentTimeMillis();
+
+    private long connectTime = System.currentTimeMillis();
 
     public UDPClient(String clientId, SocketAddress clientAddress, DatagramSocket socket) {
         this.clientId = clientId;
@@ -45,6 +47,11 @@ public class UDPClient implements Client {
     }
 
     @Override
+    public long connectTime() {
+        return connectTime;
+    }
+
+    @Override
     public void send(String topic, IotCommand command) {
         JSONObject json = (JSONObject) JSON.toJSON(command);
         json.put("type", topic);
@@ -65,6 +72,11 @@ public class UDPClient implements Client {
     @Override
     public String toString() {
         return "UDP Client[" + getClientId() + "]:[" + clientAddress + "]";
+    }
+
+    @Override
+    public boolean alive() {
+        return true;
     }
 
     @Override

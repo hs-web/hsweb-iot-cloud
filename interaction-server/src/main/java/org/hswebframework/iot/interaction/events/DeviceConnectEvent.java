@@ -14,5 +14,5 @@ import java.util.Date;
 public class DeviceConnectEvent {
     private String clientId;
 
-    private Date connectTime;
+    private Long connectTime;
 }

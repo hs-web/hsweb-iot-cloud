@@ -21,6 +21,7 @@
 ### 模块介绍
 
      ---------hsweb-iot-cloud
+     -------------device-server             # 设备管理服务
      -------------docker                    # 一些docker脚本
      ---------------dev-env                 # 启动开发环境需要的外部服务(redis,kafka,zookeeper等)
      -------------eureka-server             # 服务注册中心

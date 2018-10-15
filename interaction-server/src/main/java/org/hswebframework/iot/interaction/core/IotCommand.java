@@ -16,8 +16,8 @@ import java.util.Map;
 @Getter
 @Setter
 public class IotCommand implements ValidateBean {
-    @Range(min = Short.MAX_VALUE,message = "[messageId]值不能小于32767")
-    private long messageId;
+    @NotBlank
+    private String messageId;
 
     @NotBlank(message = "[operation]不能为空")
     private String operation;

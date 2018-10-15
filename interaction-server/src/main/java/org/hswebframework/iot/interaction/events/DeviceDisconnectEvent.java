@@ -14,5 +14,5 @@ import java.util.Date;
 public class DeviceDisconnectEvent {
     private String clientId;
 
-    private Date disconnectTime;
+    private long disconnectTime;
 }

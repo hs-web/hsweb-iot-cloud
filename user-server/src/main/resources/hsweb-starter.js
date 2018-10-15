@@ -181,18 +181,6 @@ var user = [
         "last_login_time": null,
         "creator_id": "admin",
         "create_time": 1497160610259
-    },
-    {
-        "u_id": org.hswebframework.web.id.IDGenerator.MD5.generate(),
-        "name": "网关服务用户",
-        "username": "gateway-server",
-        "password": "ba7a97be0609c22fa1d300691dfcd790",
-        "salt": "HX8Hr5Yd",
-        "status": 1,
-        "last_login_ip": null,
-        "last_login_time": null,
-        "creator_id": "admin",
-        "create_time": 1497160610259
     }
 ];
 

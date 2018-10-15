@@ -5,7 +5,7 @@ import org.hswebframework.iot.interaction.core.IotCommand;
 
 /**
  * @author zhouhao
- * @since 1.0.0
+ * @since 1.1.0
  */
 public interface Client {
 
@@ -15,10 +15,13 @@ public interface Client {
 
     long lastPingTime();
 
+    long connectTime();
+
     void send(String topic, IotCommand command);
 
     void close();
 
     void ping();
 
+    boolean alive();
 }

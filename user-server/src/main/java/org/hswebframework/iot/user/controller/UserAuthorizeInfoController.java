@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/user/authentication")
-@Authorize(permission = "user-token")
 @Api(hidden = true)
 public class UserAuthorizeInfoController {
 
@@ -37,7 +36,7 @@ public class UserAuthorizeInfoController {
     @GetMapping("/detail")
     @AccessLogger(value = "获取用户和人员权限信息", ignore = true)
     @ApiOperation(value = "获取用户和人员权限信息", hidden = true)
-    @Authorize(action = Permission.ACTION_GET)
+    @Authorize(ignore = true)
     public ResponseMessage<UserAuthorizeInfo> getUserAuthorizeInfo(@RequestParam String token) {
         UserToken userToken = userTokenManager.getByToken(token);
         if (userToken != null && userToken.isNormal()) {

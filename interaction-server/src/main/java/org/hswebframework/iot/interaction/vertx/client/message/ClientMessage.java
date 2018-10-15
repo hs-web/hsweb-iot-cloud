@@ -13,7 +13,7 @@ import java.util.Optional;
 @Getter
 @Setter
 public class ClientMessage {
-    private long messageId;
+    private String messageId;
 
     private int code;
 

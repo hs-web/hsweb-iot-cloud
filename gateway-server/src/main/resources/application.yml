@@ -74,4 +74,4 @@ feign:
 
 user-server: #要从用户服务获取数据时需要的授权配置,为用户服务中有效的的用户名密码
   client-id: gateway-server
-  client-security: admin
+  client-security: hsweb@gateway-server:user

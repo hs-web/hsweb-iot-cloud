@@ -27,6 +27,14 @@ spring:
     active: dev
   cloud:
     stream:
+      kafka:
+        binder:
+          configuration:
+            acks: all
+            linger.ms: 50
+            reconnect.backoff.ms: 20000
+            retries: 30
+            retry.backoff.ms: 20000
       default:
         group: ${spring.application.name}
         consumer:
@@ -58,11 +66,10 @@ iot:
     stream:
       producer: true #不将日志推送到kafka
   redis:
-    enable: true
-    default:  #默认的redis配置
-      enable: true
-      host: redis://127.0.0.1:6379
-      database: 0
+    clients:
+      default:  #默认的redis配置
+        hosts: redis://127.0.0.1:6379
+        database: 2
 vertx:
   service-id: ${spring.application.name}
   udp:
@@ -72,7 +79,8 @@ vertx:
     port: 1883
     accept-backlog: 2048
     send-buffer-size: 10240
-    receive-buffer-size: 32768
+    receive-buffer-size: 65536
+    max-message-size: 65536
   h-a-enabled: true
   h-a-group: _DEFAULT_
   cluster-host: 127.0.0.1 #告诉集群本机的ip
