@@ -48,7 +48,7 @@
         </plugins>
     </build>
     <properties>
-        <vertx.version>3.5.1</vertx.version>
+        <vertx.version>3.5.4</vertx.version>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.eclipse.paho/org.eclipse.paho.client.mqttv3 -->
